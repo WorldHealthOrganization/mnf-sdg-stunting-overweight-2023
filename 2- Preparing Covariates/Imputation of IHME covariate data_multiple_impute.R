@@ -70,7 +70,7 @@ all_cov <- big_wpp_dat %>%
 
 ##### This first imputation will be used to generate the country level means by imputation.
 ## Number of imputations
-B <- 1
+B <- 20
 ini <- mice(all_cov, maxit = 0)
 
 pred <- ini$pred
@@ -111,7 +111,7 @@ pred <- ini$pred
 meth <- ini$method
 imp_mci <- mice(all_cov_center_MCI_wide, 
                 pred = pred, meth = meth, print = TRUE,
-            m = B, maxit = 5, seed = 238746)
+            m = 20, maxit = 5, seed = 238746)
 
 all_cov_comp_wide <- mice::complete(imp_mci, action = "long")
 all_cov_comp_wide_long <- all_cov_comp_wide %>% 
@@ -139,7 +139,7 @@ meth <- ini$method
 meth[length(meth)] = "pmm"
 imp_sdi <- mice(all_cov_center_SDI_wide, pred = pred, meth = meth, 
                 print = TRUE,
-            m = B, maxit = 5, seed = 238746)
+            m = 20, maxit = 5, seed = 238746)
 
 all_cov_center_SDI_wide <- mice::complete(imp_sdi, action = "long")
 all_cov_comp_wide_long <- all_cov_center_SDI_wide %>% 
@@ -230,8 +230,19 @@ cov_data <- P_cov_data %>%
   select(-c("lag1","lag2","lag3","lag4","lag5")) %>% 
   filter(year > 1989)
 
+here_coun <- cov_data %>% 
+  filter(ISO.code == "XKX" | ISO.code == "TCA" )
 
-saveRDS(cov_data,"1- Sample Input Data/Single_Impute_Mar2023.rds")
+ggplot(here_coun, 
+       aes(x = year, y = SDI, group = .imp)) +
+  geom_line() +
+  facet_grid(~ISO.code)
+ggplot(here_coun, 
+       aes(x = year, y = MCI_5_yr, group = .imp)) +
+  geom_line() +
+  facet_grid(~ISO.code)
+
+saveRDS(cov_data,"1- Sample Input Data/Multiple_Imputed_Mar2023.rds")
 
 
 
