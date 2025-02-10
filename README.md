@@ -2,7 +2,10 @@
 This GitHub repository contains code and sample data for models used by UNICEF, WHO and the World Bank to generate global health estimates for stunting and overweight for the 2023 edition of the Joint Child Malnutrition Estimates.
 Details about other rounds can be found here: https://github.com/WorldHealthOrganization/mnf-sdg-stunting-overweight 
 
-Details about the input data validation, processing and cleaning can be found here: https://data.unicef.org/resources/jme-2021-country-consultations/
+Details about the input data validation, processing and cleaning can be found here: 
+https://data.unicef.org/resources/jme-standard-methodology/
+https://www.who.int/publications/i/item/9789240100190
+
 
 ## Model
 The model used in these analyses is similar to that proposed in McLain et al. (2019) [^1]   The general statistical model is a penalized longitudinal mixed model with a heterogeneous error term. The non-linear longitudinal patterns in the outcomes were captured using penalized cubic B-splines, with country-specific intercepts and random cubic B-splines. 
