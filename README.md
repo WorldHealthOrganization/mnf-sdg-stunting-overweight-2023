@@ -1,6 +1,6 @@
 # UNICEF-WHO-World Bank Joint Child Malnutrition Estimates Stunting and Overweight Global Health Estimates - 2023 Edition
-This GitHub repository contains code and sample data for models used by UNICEF, WHO and the World Bank to generate global health estimates for stunting and overweight. 
-These estimates are published biennially as the UNICEF-WHO-World Bank Joint Malnutrition Estimates. 
+This GitHub repository contains code and sample data for models used by UNICEF, WHO and the World Bank to generate global health estimates for stunting and overweight for the 2023 edition of the Joint Child Malnutrition Estimates.
+Details about other rounds can be found here: https://github.com/WorldHealthOrganization/mnf-sdg-stunting-overweight 
 
 https://data.unicef.org/resources/jme
 
