@@ -3,8 +3,8 @@ This GitHub repository contains code and sample data for models used by UNICEF, 
 Details about other rounds can be found here: https://github.com/WorldHealthOrganization/mnf-sdg-stunting-overweight 
 
 Details about the input data validation, processing and cleaning can be found here: 
-https://data.unicef.org/resources/jme-standard-methodology/
-https://www.who.int/publications/i/item/9789240100190
+- https://data.unicef.org/resources/jme-standard-methodology/
+- https://www.who.int/publications/i/item/9789240100190
 
 
 ## Model
